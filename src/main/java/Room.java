@@ -28,10 +28,8 @@ public abstract class Room {
         this.guests.remove(guest);
     }
 
-    public Guest checkGuest(){
-        for(Guest guest: guests){
-            if(guest.Name() == )
-        }
+    public void getGuests(){
+        ArrayList<Guest> copy = this.guests;
     }
 
 

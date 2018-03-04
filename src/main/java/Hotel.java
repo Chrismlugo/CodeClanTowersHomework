@@ -61,4 +61,13 @@ public class Hotel {
         }
 
     }
+
+    public void findGuests(int roomNumber){
+        for (Bedroom bedroom: bedrooms){
+            if (bedroom.getRoomNumber() == roomNumber){
+                bedroom.getGuests();
+            }
+        }
+
+    }
 }

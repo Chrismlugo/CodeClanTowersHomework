@@ -2,17 +2,14 @@ import java.util.ArrayList;
 
 public class Hotel {
     ArrayList<Bedroom> bedrooms;
-    private MeetingRoom meetingroom;
-    private DiningRoom diningroom;
-    private Bedroom bedroom;
+    ArrayList<MeetingRoom> meetingrooms;
+    ArrayList<DiningRoom> diningrooms;
 
-    public Hotel(MeetingRoom meetingroom, DiningRoom diningroom){
+
+    public Hotel(){
         bedrooms = new ArrayList<>();
-
-        this.meetingroom = meetingroom;
-        this.diningroom = diningroom;
-        this.bedroom = new Bedroom(210,Type.DOUBLE);
-
+        meetingrooms = new ArrayList<>();
+        diningrooms = new ArrayList<>();
 
     }
 
@@ -21,13 +18,22 @@ public class Hotel {
         return bedrooms.size();
     }
 
-    public int countMeetingRoom() {
-      return  meetingroom.countGuests();
+    public int countDiningRooms(){
+        return diningrooms.size();
+    }
+
+    public int countMeetingRooms(){
+        return meetingrooms.size();
     }
 
 
-    public int countDiningRoom() {
-        return diningroom.countGuests();
+
+    public void addDiningRoom(DiningRoom diningroom){
+        diningrooms.add(diningroom);
+    }
+
+    public void addMeetingRoom(MeetingRoom meetingroom){
+        meetingrooms.add(meetingroom);
     }
 
 
@@ -46,8 +52,9 @@ public class Hotel {
 
     public void checkOut(Guest guest) {
         for(Bedroom bedroom: bedrooms){
-            if(guest.getName() == bedroom.findGuestByName(guest)){
+            if(guest.Name() == bedroom.findGuestByName(guest)){
                 bedroom.removeGuest();
+
             }
 
 

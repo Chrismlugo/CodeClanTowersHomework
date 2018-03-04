@@ -31,10 +31,10 @@ public class TestBedroom {
     }
 
     @Test
-    public void canRemoveGuestByName(){
+    public void canRemoveGuest(){
         bedroom.addGuest(guest);
         Guest guest2 = new Guest("Vic", 500.00);
-        bedroom.removeGuestByName("Ryan");
+        bedroom.removeGuest(guest);
         assertEquals(1, bedroom.countGuests());
     }
 

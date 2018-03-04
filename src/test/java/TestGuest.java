@@ -16,7 +16,7 @@ public class TestGuest {
 
     @Test
     public void hasName() {
-        assertEquals("Grant", guest.getName());
+        assertEquals("Grant", guest.Name());
     }
 
     @Test

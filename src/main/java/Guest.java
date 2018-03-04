@@ -7,11 +7,13 @@ public class Guest {
         this.wallet = wallet;
     }
 
-    public String getName() {
+    public String Name() {
+
         return name;
     }
 
     public double getWallet() {
+
         return wallet;
     }
 }

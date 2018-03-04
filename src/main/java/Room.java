@@ -20,17 +20,20 @@ public abstract class Room {
     }
 
     public String findGuestByName(Guest guest) {
-         return guest.getName();
+         return guest.Name();
     }
 
 
-    public void removeGuestByName(String name){
-        this.guests.remove(name);
+    public void removeGuest(Guest guest){
+        this.guests.remove(guest);
     }
 
-    public void removeGuestByIndex(){
-        this.guests.remove(0);
+    public Guest checkGuest(){
+        for(Guest guest: guests){
+            if(guest.Name() == )
+        }
     }
+
 
     public int countGuests(){
         return guests.size();

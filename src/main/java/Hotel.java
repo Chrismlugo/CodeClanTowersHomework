@@ -70,4 +70,22 @@ public class Hotel {
         }
 
     }
+
+    public void getBedrooms(){
+        ArrayList<Bedroom> copy = this.bedrooms;
+    }
+
+
+
+    public void findVacantRooms(){
+        for (Bedroom bedroom: bedrooms){
+            if(bedroom.countGuests() == 0){
+                bedrooms.add(bedroom);
+                getBedrooms();
+            }
+
+        }
+
+    }
+
 }

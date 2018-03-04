@@ -86,6 +86,16 @@ public class TestHotel {
         assertEquals(0, bedroom.countGuests());
     }
 
+    @Test
+    public void testCanCheckAllVacantRooms(){
+        Bedroom bedroom1 = new Bedroom(235, Type.FAMILY);
+        hotel.addBedroom(bedroom1);
+        hotel.checkIn(guest1);
+        hotel.addBedroom(bedroom);
+        hotel.findVacantRooms();
+        assertEquals();
+    }
+
 
 
 }

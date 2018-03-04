@@ -92,8 +92,8 @@ public class TestHotel {
         hotel.addBedroom(bedroom1);
         hotel.checkIn(guest1);
         hotel.addBedroom(bedroom);
-        hotel.findVacantRooms();
-        assertEquals();
+
+        assertEquals(1,  hotel.findVacantRooms());
     }
 
 

@@ -71,21 +71,19 @@ public class Hotel {
 
     }
 
-    public void getBedrooms(){
-        ArrayList<Bedroom> copy = this.bedrooms;
-    }
 
 
 
-    public void findVacantRooms(){
-        for (Bedroom bedroom: bedrooms){
+    public int findVacantRooms(){
+        ArrayList<Bedroom> copy = new ArrayList<>();
+        for (Bedroom bedroom : bedrooms){
             if(bedroom.countGuests() == 0){
-                bedrooms.add(bedroom);
-                getBedrooms();
+                copy.add(bedroom);
+
             }
 
         }
-
+        return copy.size();
     }
 
 }

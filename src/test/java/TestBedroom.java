@@ -34,7 +34,7 @@ public class TestBedroom {
     public void canRemoveGuest(){
         bedroom.addGuest(guest);
         Guest guest2 = new Guest("Vic", 500.00);
-        bedroom.removeGuest(guest);
+        bedroom.removeGuest(guest2);
         assertEquals(1, bedroom.countGuests());
     }
 

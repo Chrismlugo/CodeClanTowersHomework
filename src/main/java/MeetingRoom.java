@@ -12,4 +12,10 @@ public class MeetingRoom extends Room{
         this.capacity = capacity;
 
     }
+
+    public void addGuest(Guest guest){
+        if(countGuests() < capacity){
+            guests.add(guest);
+        }
+    }
 }

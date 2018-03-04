@@ -1,38 +1,42 @@
 import java.util.ArrayList;
 
 public abstract class Room {
-    int capacity;
-    ArrayList<Guest> guests;
-    int roomNumber;
 
-    public Room(int capacity, int roomNumber){
+    ArrayList<Guest> guests;
+
+
+    public Room(){
         guests = new ArrayList<>();
-        this.capacity = capacity;
-        this.roomNumber = roomNumber;
+
     }
 
-    public void addCard(Guest guest){
-        guests.add(guest);
+    public void addGuest(Guest guest){
+           guests.add(guest);
+
+    }
+
+    public void removeGuest(){
+        guests.remove(0);
+    }
+
+    public String findGuestByName(Guest guest) {
+         return guest.getName();
+    }
+
+
+    public void removeGuestByName(String name){
+        this.guests.remove(name);
+    }
+
+    public void removeGuestByIndex(){
+        this.guests.remove(0);
     }
 
     public int countGuests(){
         return guests.size();
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
 
 
-    public int getRoomNumber() {
-        return roomNumber;
-    }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
-    }
 }

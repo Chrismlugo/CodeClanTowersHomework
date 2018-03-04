@@ -1,13 +1,15 @@
-import java.util.ArrayList;
+
 
 public class MeetingRoom extends Room{
+    int capacity;
     private String name;
     private double price;
 
-    public MeetingRoom(int capacity, int roomNumber, String name, double price){
-        super(capacity, roomNumber);
+    public MeetingRoom(int capacity, String name, double price){
+        super();
         this.name = name;
         this.price = price;
-        guests = new ArrayList<>();
+        this.capacity = capacity;
+
     }
 }

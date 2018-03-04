@@ -12,7 +12,7 @@ public class TestMeetingRoom {
 
     @Before
     public void setUp() throws Exception {
-        meetingRoom = new MeetingRoom(8, 001, "Meeting room A", 150.00);
+        meetingRoom = new MeetingRoom(4, "Meeting room A", 150.00);
         guest1 = new Guest("Chris", 50.00);
         guest2 = new Guest("Ross", 45.00);
         guest3 = new Guest("Laura", 35.00);
@@ -21,10 +21,22 @@ public class TestMeetingRoom {
 
     @Test
     public void canAddGuestsToMeetingRoom(){
-        meetingRoom.guests.add(guest1);
-        meetingRoom.guests.add(guest2);
-        meetingRoom.guests.add(guest3);
-        meetingRoom.guests.add(guest4);
+        meetingRoom.addGuest(guest1);
+        meetingRoom.addGuest(guest2);
+        meetingRoom.addGuest(guest3);
+        meetingRoom.addGuest(guest4);
+        assertEquals(4, meetingRoom.countGuests());
+    }
+
+    @Test
+    public void cantAddOverCapacity(){
+        meetingRoom.addGuest(guest1);
+        meetingRoom.addGuest(guest2);
+        meetingRoom.addGuest(guest3);
+        meetingRoom.addGuest(guest4);
+        assertEquals(4, meetingRoom.countGuests());
+        Guest guest = new Guest("Gerry", 20.00);
+        meetingRoom.addGuest(guest);
         assertEquals(4, meetingRoom.countGuests());
     }
 }
